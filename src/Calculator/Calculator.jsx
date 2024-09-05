@@ -51,6 +51,17 @@ const Calculator = () => {
         return result.join(", ")
     }
 
+    function getSum() {
+        const result = []
+        for(let i = startIndex; i < eval(`${nTerm}+1`); i++) {
+            result.push(eval(generateFunction(i)))
+        }
+
+        return result.reduce((acc, term) => {
+            return acc + term
+        })
+    }
+
     return (
         <div className="container">
             <div className="equation-display">
@@ -91,7 +102,7 @@ const Calculator = () => {
                     <option value="quadratic">Quadratic Progression</option>
                 </select>
             </form>
-            <div className=""></div>
+            <div className="sum-display">Summation: {getSum()}</div>
             <div className="sequence-display">{renderAnswer()}</div>
         </div>
     )
