@@ -58,11 +58,10 @@ const Calculator = () => {
             result.push(eval(generateFunction(i)))
         }
 
-        if(result.length >= 0) {
-            return result.reduce((acc, term) => {
-                return acc + term
-            }) 
-        } 
+        
+        return result.reduce((acc, term) => {
+            return acc + term
+        })
     }
 
     return (
